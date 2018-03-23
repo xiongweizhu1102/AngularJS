@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Angular JS控制器</title>
+		<script src="js/angular.min.js"></script>
+		<script>
+			//定义一个模块
+			var app=angular.module('myApp',[])/*应用绑定模块(html),模块是对dom的封装*/
+			app.controller('mycontroller',function($scope){
+				/*模块(html)和控制器(js)进行绑定,依靠$scope,数据绑定*/
+				/*$scope去绑定数据ng-model绑定变量*/
+				$scope.add=function(){//方法绑定返回值,方法也可以看做表达式
+					return parseInt($scope.x)+parseInt($scope.y);//数据绑定返回值
+				}
+				
+			})
+		</script>
+		
+	</head>
+	<body ng-app="myApp" ng-controller="mycontroller"><!--应用模块控制器三者绑定在一起-->
+	
+		x:<input ng-model="x" />
+		y:<input ng-model="y" />
+		运算结果:{{add()}}
+	</body>
+</html>

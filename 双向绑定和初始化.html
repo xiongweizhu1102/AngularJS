@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Angular JS双向绑定初始化指令</title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<body ng-app ng-init="name='bear'">
+	<!--ng-init初始化指令,需要ng-model绑定的变量被指定2-->
+		请输入您的姓名:<input ng-model="name" /><!--ng-model绑定变量-->
+		{{name}},您好,欢迎您!
+	</body>
+</html>
